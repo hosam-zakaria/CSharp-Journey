@@ -214,7 +214,110 @@ CLS is a set of common rules that every .NET language should follow to ensure co
 - **COM** → Allows communication with legacy COM applications.
 - **GC** → Removes unused objects from memory.
 ---
+---
 
+## 17. Parsing
+
+### Definition
+
+Parsing is the process of converting data from one data type to another.
+
+In C#, `Console.ReadLine()` always returns a **string**, even if the user enters a number.
+
+### Why Do We Use Parsing?
+
+Without parsing:
+
+```csharp
+int age = Console.ReadLine();   // ❌ Error
+```
+
+Because:
+
+```text
+Console.ReadLine() → string
+```
+
+Correct way:
+
+```csharp
+int age = int.Parse(Console.ReadLine());
+```
+
+Execution Flow:
+
+```text
+Console.ReadLine()
+        ↓
+      "25" (string)
+        ↓
+   int.Parse()
+        ↓
+      25 (int)
+```
+
+---
+
+### Common Parsing Methods
+
+```csharp
+int.Parse()
+double.Parse()
+float.Parse()
+decimal.Parse()
+bool.Parse()
+DateTime.Parse()
+```
+
+---
+
+### TryParse
+
+`TryParse()` is a safer way to convert data because it does **not** throw an exception if the conversion fails.
+
+Example:
+
+```csharp
+if (int.TryParse(Console.ReadLine(), out int age))
+{
+    Console.WriteLine(age);
+}
+else
+{
+    Console.WriteLine("Invalid Number");
+}
+```
+
+---
+
+### Parse vs TryParse
+
+| Parse() | TryParse() |
+|----------|------------|
+| Throws an Exception if conversion fails. | Returns `true` or `false`. |
+| Less safe. | Safer for user input. |
+
+---
+
+### Interview Notes
+
+**Q:** Why do we use `int.Parse()`?
+
+**A:** Because `Console.ReadLine()` always returns a **string**, so we must convert it to the required data type before using it as a number.
+
+---
+
+### Quick Review
+
+```text
+Console.ReadLine()
+        ↓
+      string
+        ↓
+     Parsing
+        ↓
+   Required Data Type (int, double, bool, ...)
+```
 ## Interview Notes
 
 **Q:** Does the C# Compiler generate Machine Code directly?
