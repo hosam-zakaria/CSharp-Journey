@@ -137,7 +137,82 @@ A DLL also contains:
 * **CPU** → Executes Machine Code
 * **DLL** → Reusable library
 * **MSIL** → Intermediate Language
+---
 
+## 12. CLR Components
+
+| Component | Description |
+|-----------|-------------|
+| **Base Class Library (BCL)** | Provides the built-in .NET libraries (e.g., `Console`, `String`, `List`, `Math`). |
+| **Thread Support** | Manages multiple threads during program execution. |
+| **COM Marshaler** | Enables communication between .NET applications and legacy COM components. |
+| **Type Checker** | Ensures type safety and validates data types. |
+| **Exception Manager** | Handles exceptions (`try`, `catch`, `finally`). |
+| **Security Engine** | Provides security services for .NET applications. |
+| **Debug Engine** | Supports debugging and helps track application errors. |
+| **JIT Compiler** | Converts MSIL into Machine Code at runtime. |
+| **Code Manager** | Manages the execution of compiled code. |
+| **Garbage Collector (GC)** | Removes objects that are no longer referenced to free memory. |
+
+---
+
+## 13. COM (Component Object Model)
+
+**Definition**
+
+COM is an old Microsoft technology that allows different applications to communicate with each other, even if they are written in different programming languages.
+
+**COM Marshaler**
+
+Acts as a bridge between .NET applications and legacy COM components.
+
+---
+
+## 14. CTS (Common Type System)
+
+**Definition**
+
+CTS defines and standardizes all data types used by every .NET language.
+
+**Purpose**
+
+- Ensures all .NET languages use the same data types.
+- Allows interoperability between languages like C#, VB.NET, and F#.
+
+---
+
+## 15. CLS (Common Language Specification)
+
+**Definition**
+
+CLS is a set of common rules that every .NET language should follow to ensure compatibility with other .NET languages.
+
+**Purpose**
+
+- Ensures code can be used across different .NET languages.
+- Represents a subset of the CTS.
+
+---
+
+## 16. CTS vs CLS
+
+| CTS | CLS |
+|-----|-----|
+| Defines all .NET data types. | Defines the common rules shared by all .NET languages. |
+| Used by the CLR and .NET languages. | Used to ensure language interoperability. |
+| Larger scope. | Subset of CTS. |
+
+---
+
+## Quick Review
+
+- **Compiler** → C# → MSIL
+- **JIT** → MSIL → Machine Code
+- **CLR** → Executes .NET applications.
+- **CTS** → Defines all .NET data types.
+- **CLS** → Defines the common rules between .NET languages.
+- **COM** → Allows communication with legacy COM applications.
+- **GC** → Removes unused objects from memory.
 ---
 
 ## Interview Notes
@@ -147,7 +222,30 @@ A DLL also contains:
 **A:** No. It generates **MSIL**. The **JIT Compiler** converts MSIL into Machine Code at runtime.
 
 ---
+---
 
+## Architecture Overview
+
+```text
+C# Code
+    ↓
+Compiler
+    ↓
+Assembly (.exe / .dll)
+    │
+    ├── MSIL
+    ├── Metadata
+    └── Manifest
+    ↓
+CLR
+    ├── CTS
+    ├── CLS
+    ├── JIT
+    └── GC
+    ↓
+Machine Code
+    ↓
+CPU
 ### One-Line Summary
 
 ```
