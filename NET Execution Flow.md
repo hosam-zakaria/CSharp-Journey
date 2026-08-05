@@ -1,4 +1,4 @@
-# C# Fundamentals - Lecture 1
+# C# Fundamentals - Lecture 1 - Part 1
 
 ## 1. What is an Executable File (.exe)?
 
