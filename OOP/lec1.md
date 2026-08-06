@@ -202,3 +202,36 @@ Cannot read the value outside the class.
 | Similar functionality | Cleaner syntax |
 
 ---
+
+## 2. Object
+
+## Definition
+
+An **Object** is an **instance** of a **Class**.
+
+When you write:
+
+```csharp
+Car car1 = new Car();
+```
+
+The following happens:
+
+- The **CLR** allocates memory in the **Heap**.
+- It creates an instance of the **Class**.
+- You now have a real object called `car1`.
+
+So,
+
+> **Object = A real instance of a Class stored in memory.**
+
+---
+
+## Physical Representation
+
+An Object is the **runtime (physical) representation** of a Class in memory.
+
+In other words:
+
+- **Class** → Blueprint (Design).
+- **Object** → The real implementation of that blueprint in memory.
