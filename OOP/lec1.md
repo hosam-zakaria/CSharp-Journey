@@ -215,12 +215,24 @@ When you write:
 Car car1 = new Car();
 ```
 
-The following happens:
+### Compile Time
 
-- The **CLR** allocates memory in the **Heap**.
-- It creates an instance of the **Class**.
-- You now have a real object called `car1`.
+The **Compiler**:
 
+- Checks that the `Car` class exists.
+- Verifies that the syntax is correct.
+- Generates **MSIL**.
+
+> **Note:** No object is created during Compile Time.
+
+### Run Time
+
+The **CLR**:
+
+- Executes the `new` keyword.
+- Allocates memory in the **Heap**.
+- Creates the actual object.
+- Returns a reference to the object and stores it in `car`.
 So,
 
 > **Object = A real instance of a Class stored in memory.**
