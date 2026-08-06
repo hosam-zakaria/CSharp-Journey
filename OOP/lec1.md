@@ -1,13 +1,10 @@
-# Procedural Programming & Get/Set in C#
+# Lecture one Notes 
 
 ## 1. Procedural Programming
 
 ### Definition
-
 Procedural Programming is a programming style where the program is divided into procedures (functions), and data is usually public and can be accessed directly.
-
 ### Characteristics
-
 - Focuses on functions.
 - Data is not protected.
 - Variables can be modified directly.
@@ -25,43 +22,19 @@ Car car = new Car();
 car.Model = "BMW";
 Console.WriteLine(car.Model);
 ```
-
 ### Problem
-
 Anyone can change the value directly.
-
 ```csharp
 car.Model = "";
 car.Model = null;
 ```
-
 This may lead to invalid data.
-
 ---
-
-## 2. Encapsulation
-
-### Definition
-
-Encapsulation is the process of hiding data and controlling how it is accessed.
-
-We use:
-
-- private fields
-- Getters
-- Setters
-- Properties
-
----
-
 # Get & Set (Method Style)
-
 ### Definition
-
 Getter returns a value.
 
 Setter updates a value.
-
 ### Example
 
 ```csharp
@@ -229,48 +202,3 @@ Cannot read the value outside the class.
 | Similar functionality | Cleaner syntax |
 
 ---
-
-# Interview Notes
-
-### Why do we use Getter and Setter?
-
-- Protect data.
-- Validate values.
-- Follow Encapsulation.
-- Prevent invalid data.
-
----
-
-### What is the difference between a Field and a Property?
-
-Field:
-```csharp
-private string model;
-```
-
-Property:
-```csharp
-public string Model { get; set; }
-```
-
-A Property provides controlled access to a field.
-
----
-
-# Quick Review
-
-```
-Procedural
-↓
-Public Variables
-↓
-Direct Access
-
-Encapsulation
-↓
-Private Fields
-↓
-Getter / Setter
-↓
-Properties
-```
