@@ -130,3 +130,31 @@ class Person
 - Has **no return type** (not even `void`).
 - Can be overloaded with different parameters.
 - Can call another constructor using `this(...)`.
+
+
+
+## Constructor Chaining
+
+- Constructor Chaining means calling one constructor from another constructor in the same class.
+- It is done using the `this(...)` keyword.
+- It helps avoid code duplication and keeps initialization in one place.
+
+### Example
+
+```csharp
+class Person
+{
+    public string Name;
+    public int Age;
+
+    public Person() : this("Unknown", 0) { }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+```
+
+> `this(...)` calls another constructor in the same class before executing the current constructor.
