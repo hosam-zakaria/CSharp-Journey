@@ -247,3 +247,28 @@ In other words:
 
 - **Class** → Blueprint (Design).
 - **Object** → The real implementation of that blueprint in memory.
+
+
+## Friend Function (C++)
+
+- `friend` allows a non-member function to access a class's `private` and `protected` members.
+- Commonly used for operator overloading or helper functions that need direct access to object data.
+- It weakens **Encapsulation**, so it should be used only when necessary.
+- **C# does not support Friend Functions.**
+
+### Example
+
+```cpp
+class Person {
+private:
+    int age = 20;
+
+    friend void printAge(Person p);
+};
+
+void printAge(Person p) {
+    cout << p.age;   // Allowed because it's a friend function
+}
+```
+
+> Normally, `p.age` would cause a compile error because `age` is `private`, but the `friend` keyword grants access.
