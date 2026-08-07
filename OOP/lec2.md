@@ -66,3 +66,67 @@ class Person
 - `this.name` → Field (instance variable).
 - `name` → Constructor parameter.
 - `this` always refers to the **current object**.
+
+
+
+
+## Constructor
+
+- A **Constructor** is a special method that is called **automatically** when an object is created.
+- Its main purpose is to **initialize the object's data**.
+- A constructor has the **same name as the class** and **does not have a return type**.
+- A class can have **multiple constructors** (Constructor Overloading).
+
+### Syntax
+
+```csharp
+class Person
+{
+    public Person()
+    {
+        Console.WriteLine("Object Created");
+    }
+}
+```
+
+### Constructor with Parameters
+
+```csharp
+class Person
+{
+    public string Name;
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+
+Person p = new Person("Hosam");
+```
+
+### Constructor Chaining
+
+```csharp
+class Person
+{
+    public string Name;
+    public int Age;
+
+    public Person() : this("Unknown", 0) { }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+```
+
+### Key Notes
+- Called automatically when using `new`.
+- Used to initialize object data.
+- Has the same name as the class.
+- Has **no return type** (not even `void`).
+- Can be overloaded with different parameters.
+- Can call another constructor using `this(...)`.
