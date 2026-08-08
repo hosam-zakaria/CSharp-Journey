@@ -131,6 +131,245 @@ class Dog : Animal
     }
 }
 ```
+# Polymorphism
+
+- **Polymorphism** means **Many Forms**.
+- It allows the same method/reference to work with different objects, while each object can have its own behavior.
+
+## Types of Polymorphism
+
+```text
+Polymorphism
+│
+├── Compile-Time
+│   ├── Method Overloading
+│   └── Operator Overloading
+│
+└── Run-Time
+    └── Method Overriding
+```
+
+## 1. Method Overloading
+
+- Same method name with **different parameters**.
+- The Compiler decides which method to call at **Compile-Time**.
+
+### Example
+
+```csharp
+class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+}
+```
+
+```csharp
+Calculator calc = new Calculator();
+
+calc.Add(2, 3);
+calc.Add(2, 3, 4);
+```
+
+> **Overloading = Same Name + Different Parameters**
+
+---
+
+## 2. Operator Overloading
+
+- Allows us to define how an operator works with our own Objects.
+- Operators like `+`, `-`, `*`, `==` can be overloaded.
+
+### Example
+
+```csharp
+class Point
+{
+    public int X;
+    public int Y;
+
+    public static Point operator +(Point a, Point b)
+    {
+        return new Point
+        {
+            X = a.X + b.X,
+            Y = a.Y + b.Y
+        };
+    }
+}
+```
+
+Now:
+
+```csharp
+Point p3 = p1 + p2;
+```
+
+The `+` operator now has a meaning for `Point` objects.
+
+> **Operator Overloading = Same Operator + Custom Behavior for Objects**
+
+---
+
+## 3. Method Overriding
+
+- The Child Class provides a **different implementation** for a method inherited from the Parent.
+- Parent method uses `virtual`.
+- Child uses `override`.
+- The decision happens at **Run-Time**.
+
+### Example
+
+```csharp
+class Creature
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Creature speaks");
+    }
+}
+
+class Human : Creature
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Human speaks");
+    }
+}
+
+class Dog : Creature
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+```
+
+### Runtime Polymorphism
+
+```csharp
+Creature c1 = new Human();
+Creature c2 = new Dog();
+
+c1.Speak();
+c2.Speak();
+```
+
+Output:
+
+```text
+Human speaks
+Dog barks
+```
+
+Here:
+
+```text
+Reference Type     Actual Object
+     ↓                  ↓
+ Creature            Human
+ Creature            Dog
+```
+
+The Reference is `Creature`, but the actual Objects are `Human` and `Dog`.
+
+At Runtime, C# chooses the overridden method according to the **actual Object**.
+
+> **Overriding = Same Method + Different Implementation in Child**
+
+---
+
+## Upcasting
+
+```csharp
+Creature c = new Human();
+```
+
+- `Creature` → Parent Reference
+- `Human` → Actual Object
+- This is called **Upcasting**.
+
+```text
+Creature reference
+       ↓
+   Human object
+```
+
+Upcasting allows us to use a Parent reference to refer to different Child objects, which is important for Runtime Polymorphism.
+
+---
+
+## Why Do We Use Polymorphism?
+
+Instead of writing separate code for every Child:
+
+```csharp
+Human h = new Human();
+Dog d = new Dog();
+Cat c = new Cat();
+```
+
+We can work with the common Parent type:
+
+```csharp
+List<Creature> creatures = new List<Creature>
+{
+    new Human(),
+    new Dog(),
+    new Cat()
+};
+
+foreach (Creature creature in creatures)
+{
+    creature.Speak();
+}
+```
+
+Each Object executes its own version of `Speak()`.
+
+```text
+Creature
+   |
+   ├── Human → Human speaks
+   ├── Dog   → Dog barks
+   └── Cat   → Cat meows
+```
+
+This makes code more **flexible, reusable, and easier to extend**.
+
+---
+
+## Quick Summary
+
+```text
+Overloading
+→ Same Method Name + Different Parameters
+→ Compile-Time
+
+Overriding
+→ Same Method + Different Implementation
+→ Run-Time
+
+Operator Overloading
+→ Same Operator + Custom Behavior for Objects
+→ Compile-Time
+```
+
+## Golden Rule
+
+> **Polymorphism = One common type/interface, many possible forms of behavior.**
+
+
+
+
 
 ## summary : 
 # Relationships Between Classes
@@ -142,8 +381,6 @@ class Dog : Animal
 | **Composition** | علشان Class **تتكون من** Objects أساسية مرتبطة بيها في الـ lifetime | `Human → Brain` |
 | **Inheritance** | علشان Class **تكون نوع من** Class تانية وتعيد استخدام صفاتها وسلوكها | `Dog → Animal` |
 | **Dependency** | علشان Class **تستخدم** Class تانية مؤقتًا لتنفيذ عملية | `Report → Printer` |
-
-## احفظها كجُمل
 
 - **Association:** `I USE / KNOW YOU`
 - **Aggregation:** `I HAVE YOU, BUT YOU CAN LIVE WITHOUT ME`
@@ -157,3 +394,4 @@ class Dog : Animal
 Association  → استخدام / تعامل
 Aggregation  → احتواء + مستقل
 Composition  → احتواء + تابع
+<img width="800" height="400" alt="c_polymorphism" src="https://github.com/user-attachments/assets/2bca9e4c-21b1-4235-a937-e705e9b89431" />
