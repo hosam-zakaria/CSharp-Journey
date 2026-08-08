@@ -71,3 +71,36 @@ class Instructor
     }
 }
 ```
+### 3 - Composition
+
+- **Composition** is a `HAS-A` relationship with **strong ownership**.
+- The main class **creates and owns** the object inside it.
+- The contained object **cannot meaningfully exist independently** from the owner.
+- Example: `Human HAS-A Brain` — the Brain is an essential part of the Human.
+
+### Example
+
+```csharp
+class Human
+{
+    private Brain brain;
+
+    public Human()
+    {
+        brain = new Brain();
+    }
+
+    public void Think()
+    {
+        brain.Think();
+    }
+}
+
+class Brain
+{
+    public void Think()
+    {
+        Console.WriteLine("Human is thinking...");
+    }
+}
+```
