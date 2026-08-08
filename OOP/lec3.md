@@ -104,3 +104,56 @@ class Brain
     }
 }
 ```
+## `base` with Inheritance & Constructors
+
+- `base` refers to the **Parent (Base) Class**.
+- A Child Class **inherits fields/properties/methods**, but it does **not inherit constructor parameters**.
+- The parameter inside the Child Constructor is a normal parameter that can be passed to the Parent Constructor using `base(...)`.
+- `base(name)` calls the Parent Constructor and passes `name` to it.
+
+### Example
+
+```csharp
+class Animal
+{
+    public string Name;
+
+    public Animal(string name)
+    {
+        Name = name;
+    }
+}
+
+class Dog : Animal
+{
+    public Dog(string name) : base(name)
+    {
+    }
+}
+```
+
+## summary : 
+# Relationships Between Classes
+
+| Relationship | موجودة ليه؟ | Example |
+|---|---|---|
+| **Association** | علشان Class **تتعامل أو تستخدم** Class تانية بدون Ownership | `Instructor → Marker` |
+| **Aggregation** | علشان Class **تجمع/تحتوي** Objects، لكن الـ Objects تفضل مستقلة | `Room → Instructor` |
+| **Composition** | علشان Class **تتكون من** Objects أساسية مرتبطة بيها في الـ lifetime | `Human → Brain` |
+| **Inheritance** | علشان Class **تكون نوع من** Class تانية وتعيد استخدام صفاتها وسلوكها | `Dog → Animal` |
+| **Dependency** | علشان Class **تستخدم** Class تانية مؤقتًا لتنفيذ عملية | `Report → Printer` |
+
+## احفظها كجُمل
+
+- **Association:** `I USE / KNOW YOU`
+- **Aggregation:** `I HAVE YOU, BUT YOU CAN LIVE WITHOUT ME`
+- **Composition:** `I HAVE YOU, AND YOU ARE PART OF ME`
+- **Inheritance:** `I AM A TYPE OF YOU`
+- **Dependency:** `I NEED YOU TEMPORARILY`
+
+## أهم 3
+
+```text
+Association  → استخدام / تعامل
+Aggregation  → احتواء + مستقل
+Composition  → احتواء + تابع
