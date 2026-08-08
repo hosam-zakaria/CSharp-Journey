@@ -135,7 +135,7 @@ class Dog : Animal
 
 - **Polymorphism** means **Many Forms**.
 - It allows the same method/reference to work with different objects, while each object can have its own behavior.
-
+![Polymorphism](polymorphism.webp)
 ## Types of Polymorphism
 
 ```text
