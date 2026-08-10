@@ -180,6 +180,11 @@ class User
 
 Cannot read the value outside the class.
 
+
+## Init-Only Setters (C# 9+)
+
+`init` allows a property to be assigned only during object initialization, then it cannot be changed.
+Useful when a property should be set once and remain immutable after object creation.
 ---
 
 # Difference
