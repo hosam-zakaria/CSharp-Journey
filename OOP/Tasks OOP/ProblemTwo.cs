@@ -18,3 +18,18 @@ class Calculator
         Console.WriteLine($"Sum Two Double Number = {(a + b):F1}"); 
     }
 }
+
+
+# Method Overloading
+
+### Why does it improve readability and reusability?
+
+It allows us to use the **same method name** for the same operation with **different parameters**.
+
+```csharp
+Sum(2, 3);
+Sum(2, 3, 5);
+Sum(2.5, 3.5);
+```
+
+> **Same operation → Same name → Different parameters**
