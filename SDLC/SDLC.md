@@ -65,3 +65,82 @@ Things that might negatively affect the project.
 - HOW MUCH → Cost / Resources
 - HOW LONG → Schedule
 - WHAT IF → Risks
+---
+# 2. Requirements
+**Requirements** describe what the software must do and the constraints/qualities it must satisfy.
+
+> **Goal:** Understand and document the customer's needs before Design & Development.
+
+---
+
+## Types of Requirements
+
+### 1. Functional Requirements
+
+Describe **what the system should do**.
+
+Examples:
+
+* User can login.
+* Customer can place an order.
+* System calculates total price.
+
+> **Functional = WHAT**
+
+---
+
+### 2. Non-Functional Requirements
+
+Describe **how well the system should work**.
+
+Examples:
+
+* Response time < 2 seconds.
+* System supports 10,000 users.
+* Data must be secure.
+
+> **Non-Functional = HOW WELL / QUALITY**
+
+---
+
+## Requirements Engineering
+
+The process of handling requirements:
+
+`Elicitation → Analysis → Specification → Validation → Management`
+
+* **Elicitation** → Gather requirements.
+* **Analysis** → Understand and resolve conflicts.
+* **Specification** → Document requirements (SRS).
+* **Validation** → Check requirements are correct, complete, and testable.
+* **Management** → Track and handle changes.
+
+---
+
+## SRS
+
+**SRS = Software Requirements Specification**
+
+A document that officially describes the system's requirements.
+
+> **SRS = The reference for what the software should do.**
+
+### 🧠 Remember
+
+`Functional → WHAT`
+
+`Non-Functional → HOW WELL`
+
+`SRS → DOCUMENTATION OF REQUIREMENTS`
+---
+
+# 3. Design
+Defines **how the software will be built** based on the requirements.
+### Main Parts
+
+* **Architecture** → Components & communication.
+* **Database Design** → Tables & relationships.
+* **UI/UX Design** → User interface & flow.
+* **Detailed Design** → Classes, APIs & components.
+
+---
