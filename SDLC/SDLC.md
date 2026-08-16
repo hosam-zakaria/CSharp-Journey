@@ -1,85 +1,52 @@
-# SDLC — Planning Phase
+# SDLC — Software Development Life Cycle
 
-## 1. What is Planning?
+## Definition
 
-The **Planning Phase** is the first phase of SDLC.
+**SDLC (Software Development Life Cycle)** is a structured process used to plan, develop, test, deploy, and maintain software.
 
-> Its goal is to decide **what we want to build, why, how, and whether it is feasible** before development starts.
+### Main Phases
 
----
-
-## 2. Business Goal
-
-Understand **why** we need the software.
-
-- What problem are we solving?
-- What do we want to achieve?
-
-**Example:**  
-Build a food delivery app to reduce order errors and improve ordering speed.
+`Planning → Requirements → Design → Development → Testing → Deployment → Maintenance`
 
 ---
 
-## 3. Stakeholders
+# 1. Planning
 
+The first phase of SDLC.
+
+> Goal: Decide **what to build, why, how, and whether it is feasible** before development starts.
+
+### Business Goal
+Understand the problem and what we want to achieve.
+
+### Stakeholders
 People or organizations affected by or interested in the system.
 
-**Example:**
-- Customer
-- Admin
-- Restaurant
-- Delivery Driver
-- Business Owner
+### Project Scope
+Defines what is **included** and **excluded** from the project.
 
----
+- **In Scope** → What we will build.
+- **Out of Scope** → What we won't build.
+- **Scope Creep** → Uncontrolled addition of new features.
 
-## 4. Project Scope
+### Feasibility Study
 
-Defines **what is included and excluded** from the project.
+Checks if the project is possible and worth doing.
 
-- **In Scope** → Features we will build.
-- **Out of Scope** → Features we will NOT build.
+- **Technical** → Can we build it?
+- **Economic** → Is it financially worth it?
+- **Operational** → Can the organization use it?
+- **Schedule** → Can we finish on time?
 
-### Scope Creep
-Uncontrolled addition of new features during the project.
-
----
-
-## 5. Feasibility Study
-
-Determines if the project is **possible and worth doing**.
-
-| Type | Question |
-|---|---|
-| Technical | Can we build it? |
-| Economic | Is it financially worth it? |
-| Operational | Can the organization use it? |
-| Schedule | Can we finish on time? |
-
----
-
-## 6. Estimation
-
-Estimate:
+### Estimation
 
 - **Time** → How long?
 - **Cost** → How much?
-- **Resources** → Who/what do we need?
+- **Resources** → What/who do we need?
 
----
+### Risks
 
-## 7. Risks
-
-Things that **might negatively affect** the project.
-
-Examples:
-- Requirements change
-- Developer leaves
-- Security problems
-- Budget problems
-- Delays
-
-### Risk Management
+Things that might negatively affect the project.
 
 `Identify → Analyze → Plan → Monitor`
 
