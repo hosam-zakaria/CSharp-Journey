@@ -51,7 +51,7 @@
 * Bad caching → **Stale Data + Bugs**
 
 ## 5. Load Balancing
-
+![System Design Overview](load-balancing.png)
 * Distribute traffic across multiple servers.
 * Types:
 
@@ -65,6 +65,7 @@
   * Failure handling
 
 ## 6. Message Queues
+![System Design Overview](asynchronous-processing-and-message-queues.png)
 
 * Move work to asynchronous/background processing.
 * Benefits:
