@@ -33,3 +33,6 @@
   * Increases architectural complexity.
   * Requires service discovery, load balancing, logging, and fault tolerance.
   * Requires managing inter-service contracts and monitoring distributed systems.
+ 
+
+ ![System Design Overview](monolithic_vs_microservices.png)
