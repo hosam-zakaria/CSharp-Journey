@@ -36,3 +36,35 @@
  
 
  ![System Design Overview](monolithic_vs_microservices.png)
+
+
+---
+
+ # 3. Event-Driven Architecture
+
+* **Structure:** System is built around the **production, detection, and consumption of events**.
+* **Communication:** Services emit events instead of making direct synchronous requests.
+* **Decoupling:** Components are **loosely coupled**; producers don't need to know which services consume their events.
+* **Best for:** Real-time systems such as:
+
+  * Order Tracking
+  * Analytics
+  * User Activity Logging
+  * Automation Workflows
+
+### Pros
+
+* Flexible and extensible.
+* Better fault isolation.
+* New features can subscribe to events without modifying core logic.
+* Services can scale independently.
+
+### Cons
+
+* Events can be delayed, duplicated, or lost.
+* Requires **Eventual Consistency**.
+* Needs careful Event Schemas and Idempotent Handlers.
+* Debugging requires Observability and tracing for asynchronous workflows.
+
+
+ ![System Design Overview](Event-Driven-Architecture-1.webp)
