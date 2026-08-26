@@ -123,7 +123,7 @@ A **Load Balancer** distributes incoming requests across the servers.
 * **Stateless requirement:** Application servers typically need to be stateless.
 
 ---
-
+![stateful & statelass](./stateful&statelass.jpg)
 # Stateless vs Stateful Services
 
 For horizontal scaling to work effectively, services should be **stateless**.
