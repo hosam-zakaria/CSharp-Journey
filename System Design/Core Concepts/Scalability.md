@@ -56,3 +56,123 @@ Keep performance **relatively stable** as load increases.
 - **Superlinear degradation** → bottleneck forming
 
 > If response time spikes or the system starts timing out → **Scalability Wall**
+
+
+---
+# Vertical Scaling (Scale Up)
+
+**Vertical scaling** means adding more power to your existing machines.
+
+Instead of adding more servers, you upgrade to a **bigger server**.
+
+> **Scale Up = Make one server stronger**
+
+### Common Actions
+
+* **Add more CPU cores** → for compute-intensive workloads
+* **Increase RAM** → to cache more data in memory
+* **Use faster SSDs** → to reduce I/O bottlenecks
+* **Upgrade network cards** → for higher bandwidth
+
+### Pros
+
+* **Simple:** No code changes required.
+* **Lower latency:** Data is local, so there are no network hops.
+* **No distributed complexity:** A single server means no data synchronization issues.
+
+### Cons
+
+* **Hardware limits:** Cannot scale beyond the largest available machine.
+* **Single point of failure:** If the server goes down, everything goes down.
+* **Cost:** Larger machines become disproportionately more expensive.
+* **Downtime:** Moving to a bigger machine may require downtime.
+
+### When to Use?
+
+* **Databases** where data locality matters
+* Applications with **strong consistency requirements**
+* **Early-stage startups** that need simplicity
+* Workloads with **predictable, moderate growth**
+
+> Vertical scaling is still scalable. Many real-world systems use vertically scaled databases for years. The key is knowing when horizontal scaling becomes necessary.
+
+---
+
+# Horizontal Scaling (Scale Out)
+
+**Horizontal scaling** means adding more machines instead of upgrading existing ones.
+
+Instead of one powerful server, you distribute the load across **many servers**.
+
+A **Load Balancer** distributes incoming requests across the servers.
+
+> **Scale Out = Add more servers**
+
+### Pros
+
+* **No hard limit:** You can keep adding servers as needed.
+* **Fault tolerance:** If one server fails, others continue serving traffic.
+* **Cost-effective:** Many smaller machines can cost less than one giant machine.
+* **Geographic distribution:** Servers can be placed closer to users for lower latency.
+
+### Cons
+
+* **Complexity:** Distributed systems are harder to build, debug, and maintain.
+* **Data consistency:** Keeping data synchronized across servers is challenging.
+* **Network overhead:** Communication between servers adds latency.
+* **Stateless requirement:** Application servers typically need to be stateless.
+
+---
+
+# Stateless vs Stateful Services
+
+For horizontal scaling to work effectively, services should be **stateless**.
+
+## Stateful
+
+A **stateful service** stores session data locally on a specific server.
+
+```text
+User
+ ↓
+Server 1
+ ↓
+User Session
+```
+
+If the user's next request goes to Server 2, Server 2 does not have the user's session.
+
+> **Stateful = The server remembers the user.**
+
+---
+
+## Stateless
+
+A **stateless service** does not store session data locally.
+
+Instead, session data is stored in a **shared store** like Redis.
+
+```text
+              Redis
+             ↗     ↖
+User → Load Balancer
+        ↙         ↘
+   Server 1     Server 2
+```
+
+Now, any server can handle any request.
+
+> **Stateless = The server does not remember the user; the shared store does.**
+
+### Why Stateless Helps Scaling
+
+With stateless services, the Load Balancer can freely distribute requests across servers.
+
+With stateful services, requests may need to keep going to the same server, creating **hotspots** and making it harder to remove servers.
+
+### How to Make Services Stateless
+
+* Store session data in a shared cache (**Redis, Memcached**)
+* Use **JWT tokens** instead of server-side sessions
+* Store uploaded files in **object storage (S3)** instead of local disk
+---
