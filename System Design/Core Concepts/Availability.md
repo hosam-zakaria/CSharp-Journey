@@ -169,6 +169,7 @@ It means having **backup components** that can take over when the primary compon
 ---
 
 # Active-Passive
+![Active](images/Active-Passive.jpg)
 
 One component handles all traffic, while another waits as a backup.
 
@@ -246,7 +247,7 @@ Backup is:
 ---
 
 # Active-Active
-
+![Active](images/Active-Active.jpg)
 All nodes handle traffic simultaneously.
 
 ```text
