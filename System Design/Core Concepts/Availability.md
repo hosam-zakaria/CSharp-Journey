@@ -56,6 +56,7 @@ Each additional nine reduces the allowed downtime by roughly **10×**.
 ---
 
 # Components in Series
+![Scalability](images/Components_in_Series.jpg)
 
 In **series**, all components must work for the system to work.
 
@@ -79,6 +80,7 @@ Overall = 99.9% × 99.9% × 99.9%
 ---
 
 # Components in Parallel
+![Scalability](images/Components_in_Parallel.jpg)
 
 In **parallel**, multiple components can handle the same workload.
 
