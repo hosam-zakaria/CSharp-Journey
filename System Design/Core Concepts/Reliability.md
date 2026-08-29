@@ -113,7 +113,7 @@ Percentage of responses containing correct data.
 # Techniques to Enhance Reliability
 
 ## 1. Redundant Architectures
-
+![stateful & statelass](images/RedundantArchitectures.jpg)
 * Have **more components than needed**.
 * If one fails, others continue working.
 * Example: multiple web servers behind a **Load Balancer**.
@@ -133,6 +133,7 @@ Server 3
 ---
 
 ## 2. Data Replication
+![stateful & statelass](images/DataReplication.jpg)
 
 * Don't store data in a **single location**.
 * Replicate data across multiple databases or data centers.
@@ -142,6 +143,7 @@ Server 3
 ---
 
 ## 3. Graceful Degradation
+![stateful & statelass](images/GracefulDegradation.jpg)
 
 When parts fail, keep **core functionality** working instead of taking the whole system down.
 
@@ -166,6 +168,7 @@ Example:
 
 ## 4. Circuit Breakers
 
+![stateful & statelass](images/CircuitBreakers.jpg)
 Prevent one failing service from causing **cascading failures**.
 
 ### States
@@ -190,6 +193,7 @@ Failure → Open
 ---
 
 ## 5. Idempotency
+![stateful & statelass](images/Idempotency.jpg)
 
 Network failures can make it unclear whether a request succeeded.
 
