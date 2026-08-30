@@ -59,7 +59,7 @@ Keep performance **relatively stable** as load increases.
 
 
 ---
-![hooo](scaling-vertical-horizontal-servers.jpg)
+![hooo](images/scaling-vertical-horizontal-servers.jpg)
 # Vertical Scaling (Scale Up)
 
 **Vertical scaling** means adding more power to your existing machines.
