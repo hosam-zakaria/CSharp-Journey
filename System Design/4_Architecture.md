@@ -15,6 +15,11 @@
   * Small changes may require regression testing for the whole system.
   * Slower release cycles.
 
+### Trade-off
+
+> **Gains:** Simplicity and performance.
+> **Sacrifices:** Independent scalability and flexibility.
+
 ---
 
 # 2. Microservices Architecture
@@ -33,14 +38,17 @@
   * Increases architectural complexity.
   * Requires service discovery, load balancing, logging, and fault tolerance.
   * Requires managing inter-service contracts and monitoring distributed systems.
- 
 
- ![System Design Overview](monolithic_vs_microservices.png)
+### Trade-off
 
+> **Gains:** Scalability, flexibility, and independence.
+> **Sacrifices:** Simplicity.
+
+![System Design Overview](monolithic_vs_microservices.png)
 
 ---
 
- # 3. Event-Driven Architecture
+# 3. Event-Driven Architecture
 
 * **Structure:** System is built around the **production, detection, and consumption of events**.
 * **Communication:** Services emit events instead of making direct synchronous requests.
@@ -66,5 +74,9 @@
 * Needs careful Event Schemas and Idempotent Handlers.
 * Debugging requires Observability and tracing for asynchronous workflows.
 
+### Trade-off
 
- ![System Design Overview](Event-Driven-Architecture-1.webp)
+> **Gains:** Loose coupling, scalability, and extensibility.
+> **Sacrifices:** Simplicity and easier consistency.
+
+![System Design Overview](Event-Driven-Architecture-1.webp)
