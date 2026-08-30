@@ -186,7 +186,7 @@ Example:
 ---
 
 # N-Tier Architecture
-
+![](images/N-Tier-Architecture.png)
 **N-Tier** (also called **Multitier**) refers to an application architecture with **more than one tier**.
 
 Examples:
