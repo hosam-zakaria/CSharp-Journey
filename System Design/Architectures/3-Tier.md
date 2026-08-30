@@ -1,2 +1,2 @@
 
-![3_Tier](images/Two-Tier-Architecture.png)
+![3_Tier](images/Three-Tier-Architecture.png)
