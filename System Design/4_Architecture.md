@@ -18,6 +18,7 @@
 ### Trade-off
 
 > **Gains:** Simplicity and performance.
+> 
 > **Sacrifices:** Independent scalability and flexibility.
 
 ---
@@ -42,6 +43,7 @@
 ### Trade-off
 
 > **Gains:** Scalability, flexibility, and independence.
+> 
 > **Sacrifices:** Simplicity.
 
 ![System Design Overview](monolithic_vs_microservices.png)
@@ -77,6 +79,7 @@
 ### Trade-off
 
 > **Gains:** Loose coupling, scalability, and extensibility.
+> 
 > **Sacrifices:** Simplicity and easier consistency.
 
 ![System Design Overview](Event-Driven-Architecture-1.webp)
