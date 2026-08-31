@@ -1,5 +1,8 @@
 # Onion Architecture
 
+![onion](images/Onion_Architecture.png)
+
+
 ## 1. Definition
 
 > **Onion Architecture** is a domain-centric software architecture pattern
