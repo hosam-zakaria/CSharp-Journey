@@ -1,4 +1,4 @@
-# Onion Architecture — Study Notes
+# Onion Architecture
 
 ## 1. Definition
 
